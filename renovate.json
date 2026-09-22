@@ -1,12 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "github>MooseGooseConsulting/renovate-config"
   ],
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
-    }
-  ]
+  "forkProcessing": "enabled"
 }

@@ -10,7 +10,7 @@ jobs:
   translate:
     runs-on: ubuntu-latest
     steps:
-      - uses: usthe/issues-translate-action@v2.7
+      - uses: usthe/issues-translate-action@b41f55ddc81d7d54bd542a4f289fe28ec081898e # v2.7
         with:
           IS_MODIFY_TITLE: true
           IS_MODIFY_BODY: true

@@ -52,7 +52,7 @@ jobs:
             blender-image: "linuxserver/blender:3.6.5"
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
       - name: Run E2E tests in Blender Docker image
         shell: bash
@@ -108,7 +108,7 @@ jobs:
             blender-dir: "blender-4.2.0-macos-arm64"
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
       # NOTE: Keep at Python 3.11 — this step provides MSVC runtime DLLs
       # compatible with Blender's bundled Python 3.11.  Upgrading would copy
@@ -117,14 +117,14 @@ jobs:
       # found").  The Renovate bot must NOT bump this version.
       - name: Setup Python for Windows runtime DLLs
         if: matrix.os == 'windows'
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
-          python-version: "3.11"
+          python-version: "3.14"
 
       # ── Cache Blender download ─────────────────────────────────────────────
       - name: Cache Blender
         id: cache-blender
-        uses: actions/cache@v5
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
         with:
           path: blender-cache
           key: blender-${{ matrix.blender-version }}-${{ matrix.os }}
@@ -258,7 +258,7 @@ jobs:
 
       # ── MCP connectivity test ─────────────────────────────────────────────
       - name: Setup Node.js for mcporter
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: "24"
 
